@@ -1,0 +1,19 @@
+[
+
+        {
+            "id": 1,
+            "name": "John Doe",
+            "age": 35,
+            "gender": "Male",
+            "national_id": "123456789",
+            "address": "123 Main St, City, Country"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "age": 29,
+            "gender": "Female",
+            "national_id": "987654321",
+            "address": "456 Elm St, Another City, Country"
+        }
+]

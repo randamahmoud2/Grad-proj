@@ -1,0 +1,45 @@
+.data2 .buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.num, .text{
+    width: 180px;
+    border: none;
+    background: none;
+    font-size: 13px;
+    padding: 6px;
+}
+.num:focus, .text:focus{
+    background: white;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .num, .text {
+        width: 160px;
+        font-size: 12px;
+    }
+    
+    .data2 .buttons {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .num, .text {
+        width: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .data2 .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .num, .text {
+        width: 100%;
+    }
+}

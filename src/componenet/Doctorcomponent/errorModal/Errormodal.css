@@ -1,0 +1,17 @@
+.Errormodal{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    color: rgb(225, 73, 73);
+    background: rgb(247, 181, 181);
+}
+.Errormodal div p{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 20px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 0;
+}

@@ -1,0 +1,22 @@
+[
+
+    {
+        "id": 1,
+        "name": "ORVEX H  Syrup",
+        "strength": "",
+        "refill": 0,
+        "dispense": 1,
+        "patientInstruction": " 3مرات يوميا",
+        "expiration": 0
+
+    },
+    {
+        "id": 2,
+        "name": "B-fresh 250ml Mouth Was",
+        "strength": "250ml",
+        "refill": null,
+        "dispense": null,
+        "patientInstruction": "3 مرات يوميا",
+        "expiration": null
+    }
+]

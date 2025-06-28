@@ -1,0 +1,329 @@
+.dashboard1 {
+    margin-left: 11%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* dashboard1 Header */
+.data2 .title2 {
+    margin-bottom: 10px;
+}
+
+.data2 .title2 p {
+    margin: 0;
+    font-size: 20px;
+    color: #2a6dc9;
+}
+
+.data2 .title2 .subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-top: 3px;
+    display: block;
+}
+
+#split {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2a6dc9, #50b7f5, transparent);
+    margin: 10px 0 20px 0;
+    width: 100%;
+}
+
+.details {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Stats Cards */
+.up1 {
+    width: 73%;
+}
+
+.up1 .docInfo {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.up1 .docInfo .Info1 {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    flex: 1;
+    min-width: 220px;
+    border-radius: 8px;
+    align-items: center;
+    color: rgb(3, 3, 76);
+    border: 1px solid rgba(1, 1, 52, 0.342);
+}
+
+.up1 .docInfo .Info1 div {
+    gap: 3px;
+    font-size: 18px;
+}
+
+.title1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title1 div {
+    gap: 8px;
+    padding-bottom: 8px;
+}
+
+.title1 p {
+    font-size: 18px;
+}
+
+.title1 hr {
+    border: 1px solid rgba(1, 1, 52, 0.119);
+}
+
+.down1 {
+    width: 73%;
+    display: flex;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid rgba(1, 1, 52, 0.342);
+}
+
+.down1 .appointment1 {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    padding: 15px 8px;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.down1 .appointment1 .description {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.down1 .appointment1 .description div {
+    gap: 3px;
+    font-size: 15px;
+}
+
+.down1 .appointment1 .complete1 {
+    gap: 10px;
+}
+
+.down1 .appointment1 .complete1 button {
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+/* Dental Procedures Stats */
+.dental-stats {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.procedures-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.procedure-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f9faff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.procedure-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.procedure-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.procedure-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.procedure-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.procedure-count {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2a6dc9;
+}
+
+/* appointment1s Section */
+.appointment1 {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    background: #f9faff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.appointment1:hover {
+    background: #f0f4ff;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.appointment1 .description {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.appointment1 .description img {
+    width: 45px ;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointment1 .description div {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.appointment1 .description div p:first-child {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2a6dc9;
+    margin: 0;
+}
+
+.appointment1 .description div p:not(:first-child) {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.complete1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.complete1 button {
+    border: none;
+    cursor: pointer;
+    background: rgba(42, 109, 201, 0.05);
+
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.complete1 button:hover {
+    background: rgba(42, 109, 201, 0.1);
+    transform: scale(1.1);
+}
+
+.complete1 button img {
+    transition: all 0.3s ease;
+}
+
+.complete1 p {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 13px ;
+    font-weight: 600;
+}
+
+.complete1 p[style*="green"] {
+    background: rgba(46, 125, 50, 0.1);
+    color: #2e7d32 ;
+}
+
+.complete1 p[style*="red"] {
+    background: rgba(211, 47, 47, 0.1);
+    color: #d32f2f ;
+}
+
+.complete1 p[style*="orange"] {
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800 ;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .up1 .docInfo .Info1 {
+        min-width: 200px;
+    }
+    
+    .procedures-container {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard1 {
+        margin-left: 15%;
+    }
+    .up1 .docInfo .Info1 {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard1 {
+        padding: 10px;
+        margin-left: 18%;
+    }
+    
+    .appointment1 {
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .appointment1 .description {
+
+        align-items: center;
+    }
+    
+    .appointment1 .description div p{
+        text-align: justify;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard1 {
+        margin-left: 0;
+    }
+}

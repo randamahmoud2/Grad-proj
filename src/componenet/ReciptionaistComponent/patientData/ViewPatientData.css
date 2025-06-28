@@ -1,0 +1,173 @@
+.patient-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    background: #f8fafc;
+}
+
+.info-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f4ff;
+}
+
+.section-icon {
+    font-size: 20px;
+    color: #2a6dc9;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a365d;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.value {
+    font-size: 14px;
+    color: #1a365d;
+    font-weight: 500;
+}
+
+.procedures-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.procedure-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.procedure-name {
+    font-size: 13px;
+    color: #2a6dc9;
+    font-weight: 500;
+}
+
+.procedure-date {
+    font-size: 12px;
+    color: #718096;
+}
+
+/* Personal Info Section Specific Styles */
+.personal-info .section-icon {
+    color: #2a6dc9;
+}
+
+/* Contact Info Section Specific Styles */
+.contact-info .section-icon {
+    color: #38a169;
+}
+
+/* Medical History Section Specific Styles */
+.medical-history .section-icon {
+    color: #e53e3e;
+}
+
+/* Dental History Section Specific Styles */
+.dental-history .section-icon {
+    color: #805ad5;
+}
+
+@media (max-width: 768px) {
+    .patient-container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .info-section {
+        padding: 15px;
+    }
+
+    .section-header {
+        margin-bottom: 15px;
+    }
+
+    .info-grid {
+        gap: 12px;
+    }
+
+    .label {
+        font-size: 11px;
+    }
+
+    .value {
+        font-size: 13px;
+    }
+
+    .procedure-item {
+        padding: 6px 10px;
+    }
+
+    .procedure-name {
+        font-size: 12px;
+    }
+
+    .procedure-date {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 576px) {
+    .patient-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-item {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f4ff;
+    }
+
+    .info-item:last-child {
+        border-bottom: none;
+    }
+}

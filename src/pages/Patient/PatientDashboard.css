@@ -1,0 +1,433 @@
+.patient-dashboard-portal {
+  margin-left: 11%;
+  min-height: 100vh;
+  padding: 0 15px;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.patient-header {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.patient-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(44,62,80,0.12);
+}
+
+.patient-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 16px;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.08);
+  transition: transform 0.2s ease;
+  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+}
+
+.patient-avatar:hover {
+  transform: scale(1.05);
+}
+
+.patient-info {
+  flex: 1;
+}
+
+.patient-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.patient-main h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.01em;
+}
+
+.patient-id, .patient-dob, .patient-status {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.patient-status {
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #93c5fd;
+  transition: all 0.2s ease;
+}
+
+.patient-status:hover {
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+  transform: translateY(-1px);
+}
+
+.patient-details {
+  display: flex;
+  gap: 32px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.patient-details .label {
+  display: block;
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.patient-details span:not(.label) {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.patient-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+  padding: 0 12px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.tab {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748b;
+  overflow: hidden;
+  padding: 8px 16px;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+
+
+.tab.active, .tab:hover {
+    color: #3b82f6;
+    background: #fff;
+    border-color: #3b82f6;
+}
+
+.tab.active::after, .tab:hover::after {
+  transform: scaleX(1);
+}
+
+.dashboard-content {
+    gap: 20px;
+    display: flex;
+    padding: 0 12px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.appointments-section {
+  flex: 2;
+  min-width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+  padding: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.appointments-section:hover {
+  transform: translateY(-2px);
+}
+
+.appointments-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.appointments-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0;
+}
+
+.new-appointment-btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.2);
+}
+
+.new-appointment-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+  border: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doctor-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.specialty {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.appointment-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.status-badge {
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(235, 113, 113, 0.704);
+  margin-top: 2px;
+  display: inline-block;
+}
+
+.status-badge.upcoming {
+  background: #38bdf8;
+}
+
+.activity-section {
+  flex: 1;
+  min-width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+  padding: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.activity-section:hover {
+  transform: translateY(-2px);
+}
+
+.activity-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 2px 0;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  margin-top: 6px;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.activity-item:hover .activity-dot {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+.activity-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  flex-wrap: wrap;
+}
+
+.activity-type {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.activity-status {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.activity-date {
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-left: 6px;
+}
+
+.activity-desc {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+@media (max-width: 992px) {
+  .patient-dashboard-portal {
+    margin-left: 15%;
+  }
+}
+@media (max-width: 768px) {
+  .patient-dashboard-portal {
+    margin-left: 18%;
+    padding: 12px 0;
+  }
+  
+  .patient-header {
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .patient-main {
+    gap: 8px;
+  }
+  
+  .patient-main h2 {
+    font-size: 1.2rem;
+  }
+  
+  .patient-details {
+    gap: 20px;
+  }
+  
+  .dashboard-content {
+    gap: 16px;
+  }
+  
+  .appointments-section, .activity-section {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .patient-dashboard-portal {
+    margin-left: 0;
+  }
+
+  
+  .patient-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .patient-main h2 {
+    font-size: 1.1rem;
+  }
+  
+  .patient-id, .patient-dob, .patient-status {
+    font-size: 0.8rem;
+  }
+  
+  .tab {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .appointments-header h3 {
+    font-size: 1rem;
+  }
+  
+  .new-appointment-btn {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .appointment-card {
+    padding: 10px 12px;
+  }
+  
+  .doctor-name {
+    font-size: 0.9rem;
+  }
+  
+  .specialty {
+    font-size: 0.8rem;
+  }
+  
+  .status-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+  }
+  
+  .activity-section h3 {
+    font-size: 1rem;
+  }
+  
+  .activity-title {
+    font-size: 0.85rem;
+  }
+  
+  .activity-desc {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,325 @@
+.dashboard{
+    margin-left: 11%;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+.details{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.up2{
+    width: 100%;
+    padding: 20px 0;
+}
+.up2 .docInfo{
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.up2 .docInfo .Info1{
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    padding: 25px;
+    min-width: 180px;
+    overflow: hidden;
+    position: relative;
+    align-items: start;
+    background: white;
+    border-radius: 15px;
+    color: rgb(3, 3, 76);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(1, 1, 52, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.up2 .docInfo .Info1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+.up2 .docInfo .Info1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(1, 1, 52, 0.2);
+}
+.up2 .docInfo .Info1:hover::before {
+    opacity: 1;
+}
+.up2 .docInfo .Info1 img {
+    padding: 12px;
+    border-radius: 12px;
+    background: #f0f7ff;
+    transition: all 0.3s ease;
+}
+.up2 .docInfo .Info1:hover img {
+    transform: scale(1.1);
+    background: #e3f2fd;
+}
+.up2 .docInfo .Info1 div{
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    align-items: start;
+    flex-direction: column;
+}
+.up2 .docInfo .Info1 div p:first-child{
+    font-size: 24px;
+    font-weight: 700;
+    color: #2f6fc8;
+    margin-bottom: 5px;
+}
+.up2 .docInfo .Info1 div p:nth-child(2) {
+    color: rgba(3, 3, 76, 0.8);
+    font-size: 14px;
+}
+.up2 .docInfo .Info1 div p:nth-child(3) {
+    color: rgba(3, 3, 76, 0.6);
+    font-size: 12px;
+    margin-top: 5px;
+}
+.down2{
+    width: 100%;
+    display: flex;
+    border-radius: 15px;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    justify-content: space-between;
+    border: 1px solid rgba(1, 1, 52, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.down2 .recentSignUps::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+.recentSignUps {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+    overflow: hidden;
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.recentSignUps .header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(1, 1, 52, 0.1);
+}
+.recentSignUps .header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2f6fc8;
+}
+.recentSignUps .header .viewAll {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f6fc8;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: #f0f7ff;
+    transition: all 0.3s ease;
+}
+.recentSignUps .header .viewAll:hover {
+    color: white;
+    background: #2f6fc8;
+}
+.signupEntry {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color: #2f6fc8;
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 12px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    justify-content: space-between;
+    border: 1px solid rgba(1, 1, 52, 0.05);
+}
+.signupEntry:hover {
+    background: #f0f7ff;
+    transform: translateX(5px);
+    border-color: rgba(47, 111, 200, 0.2);
+}
+.signupEntry .userInfo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.signupEntry .userInfo .avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #e3f2fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #2f6fc8;
+}
+.signupEntry .userInfo .details1 {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+.signupEntry .userInfo .details1 .name {
+    font-weight: 600;
+    color: #2f6fc8;
+}
+.signupEntry .userInfo .details1 .role {
+    font-size: 12px;
+    color: #2f6fc8a0;
+}
+.signupEntry .date {
+    font-size: 13px;
+    color: #2f6fc8a0;
+    font-weight: 500;
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard {
+        margin-left: 11%;
+        padding: 15px;
+    }
+
+    .up2 .docInfo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .up2 .docInfo .Info1 {
+        min-width: 250px;
+    }
+}
+@media (max-width: 992px) {
+    .dashboard {
+        margin-left: 15%;
+    }
+
+    .up2 .docInfo .Info1 {
+        min-width: calc(50% - 20px);
+    }
+
+    .title1 p {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .dashboard {
+        margin-left: 18%;
+    }
+    .up2 {
+        padding: 15px 0;
+    }
+    .up2 .docInfo {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .up2 .docInfo .Info1 {
+        padding: 20px;
+    }
+
+    .up2 .docInfo .Info1 div p:first-child {
+        font-size: 22px;
+    }
+
+    .down2 {
+        padding: 20px;
+    }
+
+    .recentSignUps {
+        padding: 20px;
+    }
+
+    .signupEntry {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .signupEntry .userInfo {
+        width: 100%;
+    }
+
+    .signupEntry .date {
+        width: 100%;
+        text-align: right;
+    }
+}
+@media (max-width: 576px) {
+    .dashboard {
+        margin-left: 0;
+    }
+    .up2 {
+        padding: 10px 0;
+    }
+
+    .up2 .docInfo .Info1 {
+        padding: 15px;
+    }
+
+    .up2 .docInfo .Info1 img {
+        padding: 10px;
+    }
+
+    .up2 .docInfo .Info1 div p:first-child {
+        font-size: 20px;
+    }
+
+    .title1 p {
+        font-size: 18px;
+    }
+
+    .down2 {
+        padding: 15px;
+    }
+
+    .recentSignUps {
+        padding: 15px;
+    }
+
+    .recentSignUps .header h3 {
+        font-size: 16px;
+    }
+
+    .recentSignUps .header .viewAll {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .signupEntry {
+        padding: 15px;
+    }
+
+    .signupEntry .userInfo .avatar {
+        width: 40px;
+        height: 40px;
+    }
+}

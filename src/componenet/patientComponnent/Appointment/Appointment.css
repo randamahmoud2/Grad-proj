@@ -1,0 +1,265 @@
+.Appointment1{
+    margin-left: 11%;
+    padding:0px 15px;
+}
+
+.body{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: start;
+}
+.body .DocPhoto{
+    width: 380px;
+    background: white;
+    border-radius: 10px;
+    background: #b4d3ee6c;
+    border: 1px solid #6495c0;
+}
+.body .DocPhoto img{
+    width: 231px;
+}
+.bookSlots .DocInfo{
+    width: 50%;
+    height: 235px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #6495c0;
+}
+.bookSlots .DocInfo .info{
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: start;
+    flex-direction: column;
+    color: #357adb;
+}
+.bookSlots .DocInfo .info div{
+    display: flex;
+    gap: 5px;
+    align-items: start;
+    flex-direction: column;
+}
+.bookSlots .DocInfo .info p{
+    padding-bottom: 3px;
+}
+.bookSlots .DocInfo .info .p1{
+    text-align: justify;
+    line-height: 1.4rem;
+}
+.bookSlots .DocInfo .info .docname{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.bookSlots .DocInfo .info .doc-about{
+    font-size: 16px;
+    font-weight: 600;
+}
+.bookSlots .DocInfo .info .doc-about-p{
+    font-size: 13px;
+    color: #59595996;
+}
+.bookSlots .DocInfo .info .doc-price{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+.bookSlots{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.bookSlots h3{
+    font-size: 18px;
+    font-weight: 800;
+    color: #2a6dc9;
+}
+.bookSlots .dateTime{
+    display: flex;
+    gap: 15px;
+}
+.bookSlots .slots .time1{
+    display: flex;
+    gap: 15px;
+    width: 80%;
+    padding-top: 20px;
+}
+.slots .dateTime .selected{
+    border: none;
+    color: white;
+    background: rgba(0, 128, 0, 0.836);
+
+}
+.slots .dateTime button{
+    width: 50px;
+    display: flex;
+    gap: 5px;
+    height: 70px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 50%;
+    align-items: center;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(128, 128, 128, 0.718);
+    border: 1px solid rgba(128, 128, 128, 0.63);
+}
+
+.slots .time1 .button{
+    width: 120px;
+    padding: 10px;
+    display: grid;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: white;
+    color: rgba(128, 128, 128, 0.63);
+    border: 1px solid rgba(128, 128, 128, 0.727);
+} 
+.slots .time1 .selected{
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: rgba(0, 128, 0, 0.863);
+} 
+.book{
+    width: 150px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 10px;
+    border-radius: 30px;
+    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.541);
+    background: linear-gradient(to left, #007bff, #0056b3);
+}
+.book:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 992px) {
+    .Appointment1 {
+        margin-left: 15%;
+    }
+    .body {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    .body .DocPhoto {
+        margin-bottom: 10px;
+    }
+    .bookSlots .DocInfo {
+        width: 100%;
+        padding: 8px;
+    }
+    .bookSlots .DocInfo .info {
+        width: 100%;
+        padding: 8px;
+        gap: 10px;
+    }
+    .bookSlots {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Appointment1 {
+        margin-left: 18%;
+    }
+    .body {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .body .DocPhoto {
+        width: 50%;
+        margin-bottom: 8px;
+    }
+    .bookSlots .DocInfo {
+        width: 100%;
+        padding: 6px;
+    }
+    .bookSlots .DocInfo .info {
+        width: 100%;
+        padding: 6px;
+        gap: 7px;
+    }
+    .bookSlots {
+        gap: 10px;
+    }
+    .bookSlots h3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .Appointment1 {
+        margin-left: 0;
+
+    }
+    .body {
+        flex-direction: column;
+        gap: 6px;
+        align-items: stretch;
+    }
+    .body .DocPhoto {
+        width: 50%;
+        margin-bottom: 5px;
+    }
+    .bookSlots .DocInfo {
+        width: 100%;
+        padding: 3px;
+    }
+    .bookSlots .DocInfo .info {
+        width: 100%;
+        padding: 3px;
+        gap: 4px;
+    }
+    .bookSlots h3 {
+        font-size: 12px;
+    }
+    .slots .dateTime button {
+        width: 36px;
+        height: 45px;
+        font-size: 9px;
+        border-radius: 50%;
+        padding: 2px;
+    }
+    .slots .time1 .button {
+        width: 70px;
+        padding: 5px;
+        font-size: 9px;
+        border-radius: 18px;
+    }
+    .book {
+        width: 90px;
+        font-size: 9px;
+        padding: 6px 6px;
+        border-radius: 18px;
+    }
+    .bookSlots .DocInfo .info .docname {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    .bookSlots .DocInfo .info .doc-about{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .bookSlots .DocInfo .info .doc-about-p{
+        font-size: 10px;
+    }
+    .bookSlots .DocInfo .info .doc-price{
+        font-size: 14px;
+    }
+}

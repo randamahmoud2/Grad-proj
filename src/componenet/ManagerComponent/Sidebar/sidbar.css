@@ -1,0 +1,130 @@
+.sidebar1{
+    top: 30px;
+    padding-top: 60px;
+}
+.side-menu2{
+    width: 11%;
+    height: 120vh;
+    position: fixed;
+    padding-top: 15px;
+    transition: all 0.3s ease;
+    background: rgb(234, 243, 251);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.side-menu2 ul .link{
+    text-decoration: none;
+}
+.side-menu2 ul li{
+    display: flex;
+    padding: 8px;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: #022253;
+    transition: 0.3s;
+    list-style: none;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.side-menu2 ul li:hover{
+    color: #020b18;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    background: rgb(251, 251, 251);
+}
+
+#patient1 {
+    width: 18px;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+.side-menu2 ul img{
+    width: 20px;
+}
+
+/* Medium screens */
+@media (max-width: 992px) {
+    .side-menu2 {
+        width: 15%;
+    }
+    
+    .side-menu2 ul li {
+        font-size: 12px;
+        padding: 7px;
+        padding-left: 12px;
+    }
+    
+    .side-menu2 ul li:hover {
+        letter-spacing: 0.3px;
+    }
+    
+    .side-menu2 ul img {
+        display: none;
+    }
+}
+
+@media (max-width: 998px) {
+    .side-menu2 ul li img{
+        display: none;
+    }
+}
+/* Small screens */
+@media (max-width: 772px) {
+    .side-menu2 {
+        width: 18%;
+    }
+    
+    .side-menu2 ul li p {
+        font-size: 10px;
+    }
+    
+    .side-menu2 ul li:hover {
+        font-size: 13px;
+        letter-spacing: 0.2px;
+    }
+    .side-menu2 ul li img{
+        display: none;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 576px) {
+    .sidebar {
+        padding-top: 0;
+    }
+    
+    .side-menu2 {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        padding: 5px 0;
+    }
+    
+    .side-menu2 ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .side-menu2 ul li {
+        padding: 5px;
+        gap: 5px;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .side-menu2 ul li p {
+        margin: 0;
+        font-size: 10px;
+    }
+    
+    .side-menu2 .hr {
+        display: none;
+    }
+}

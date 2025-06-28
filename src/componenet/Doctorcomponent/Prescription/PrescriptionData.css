@@ -1,0 +1,110 @@
+.prescription{
+    margin-left: 11%;
+    padding: 0 15px;
+    height: auto;
+}
+.prescription .data2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.data2 .title2 {
+    margin: 0;
+    display: flex;
+    gap: 120px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2a6dc9;
+    padding-top: 15px;
+    align-items: center;
+}
+.data2 #name{
+    font-size: 13px;
+    color: #2a6cc997;
+    font-weight: 600;
+}
+.link{
+    text-decoration: none;
+}
+.data2 .add, .data2 .delete{
+    width: 80px;
+    height: 28px;
+    border: none;
+    padding: 16px;
+    display: flex;
+    color: white;
+    margin-top: 10px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2a6dc9, #50b7f5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.data2 .add:hover{
+    background: rgb(62, 93, 120);
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .data2 .title2 {
+        gap: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .prescription {
+        margin-left: 15%;
+    }
+    
+    .data2 .title2 {
+        gap: 80px;
+    }
+    
+    .data2 .add, .data2 .delete {
+        width: 70px;
+        height: 26px;
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .prescription {
+        margin-left: 18%;
+        padding: 0 10px;
+    }
+    
+    .data2 .title2 {
+        gap: 40px;
+        font-size: 14px;
+    }
+    
+    .data2 #name {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .prescription {
+        margin-left: 0;
+        padding: 0 8px;
+        margin-bottom: 60px;
+    }
+    
+    .data2 {
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .data2 .title2 {
+
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .data2 .add, .data2 .delete {
+        align-self: flex-end;
+        margin-top: -40px;
+    }
+}

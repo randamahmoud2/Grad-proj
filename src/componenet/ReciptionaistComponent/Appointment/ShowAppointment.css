@@ -1,0 +1,173 @@
+.summary{
+    margin-left: 11%;
+    padding:0px 15px;
+    box-sizing: border-box;
+}
+.booking-summary{
+
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    gap: 16px;
+    box-sizing: border-box;
+}
+.booking-summary .summary-doc{
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+.summary-doc img{
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid #6495c0;
+    background-color: #b4d3ee6c;
+    object-fit: cover;
+}
+.booking-summary .summary-doc .summary-info{
+    display: flex;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.7em;
+    flex-direction: column;
+    text-transform: capitalize;
+    justify-content: flex-start;
+    color: rgba(4, 4, 86, 0.8);
+}
+.booking-summary .cancel{
+    display: flex;
+    gap: 10px;
+    padding-bottom: 8px;
+
+    flex-direction: column;
+}
+.cancel button{
+    width: 150px;
+    border: none;
+    color: white;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(128, 128, 128, 0.541);
+    background: linear-gradient(to left, #007bff, #0056b3);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.cancel button:hover {
+    background: linear-gradient(to left, #0056b3, #007bff);
+    box-shadow: 0 2px 8px rgba(128, 128, 128, 0.15);
+}
+.appointment-doc-name{
+    font-size: 15px;
+    font-weight: 600;
+    color: #357adb;
+}
+.paid1{
+    width: 100px;
+    color: green;
+    padding: 8px 0;
+    font-size: 12px;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    background-color: #b8f9b8e4;
+}
+
+.error-message{
+    background-color: var(--danger-light);
+    color: var(--danger);
+    padding: 16px;
+    border-radius: 6px;
+    margin: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .summary {
+        margin-left: 15%;
+        padding: 0 15px;
+    }
+    .booking-summary {
+        gap: 10px;
+    }
+    .booking-summary .summary-doc {
+        gap: 10px;
+    }
+    .summary-doc img {
+        width: 70px;
+    }
+    .cancel button {
+        width: 100px;
+        font-size: 11px;
+        padding: 7px 0;
+    }
+    .paid1 {
+        width: 70px;
+        font-size: 10px;
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .summary {
+        margin-left: 18%;
+    }
+    .booking-summary {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    .booking-summary .summary-doc {
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    .summary-doc img {
+        width: 48px;
+        border-radius: 6px;
+    }
+    .booking-summary .summary-doc .summary-info {
+        font-size: 11px;
+        margin-top: 2px;
+        line-height: 1.3em;
+    }
+    .cancel button {
+        width: 70px;
+        font-size: 9.5px;
+        padding: 5px 0;
+        border-radius: 10px;
+    }
+    .paid1 {
+        width: 50px;
+        font-size: 8.5px;
+        padding: 3px 0;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .summary {
+        margin-left: 0;
+    }
+    .summary-doc img {
+        width: 36px;
+    }
+    .cancel button {
+        width: 100px;
+        padding: 3px 0;
+        font-size: 10px;
+        border-radius: 7px;
+    }
+    .cancel .paid1{
+        width: 80px;
+        padding: 5px 0;
+        font-size: 10px;
+    }
+    .paid1 {
+        font-size: 7px;
+        padding: 2px 0;
+        border-radius: 7px;
+    }
+}

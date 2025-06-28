@@ -1,0 +1,282 @@
+.container1 {
+  margin-left: 11%;
+  padding: 0 15px;
+}
+
+.container1 .docInfo {
+  width: 95%;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.container1 .docInfo .Info1 {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  height: 120px;
+  margin-top: 20px;
+  width: calc(90%/3);
+  min-width: 250px;
+  border-radius: 10px;
+  align-items: center;
+  color: rgb(3, 3, 76);
+  border: 1px solid rgba(1, 1, 52, 0.26);
+  transition: all 0.3s ease;
+}
+
+.container1 .docInfo .Info1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container1 .docInfo .Info1 img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.container1 .docInfo .Info1 div {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  align-items: start;
+  flex-direction: column;
+}
+
+.container1 .docInfo .Info1 div p:last-child {
+  font-size: 20px;
+}
+
+.search1 {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search1 div {
+
+  display: flex;
+  padding: 2px 10px;
+  border-radius: 15px;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(1, 1, 52, 0.26);
+}
+
+.search1 div:focus-within {
+  box-shadow: 0 0 0 2px rgba(1, 1, 52, 0.1);
+}
+
+.search1 div img {
+  color: rgba(128, 128, 128, 0.522);
+}
+
+.search1 div input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.search1 div input::placeholder {
+  font-weight: 100;
+  color: rgba(116, 117, 117, 0.531);
+}
+
+#Role {
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #042b63;
+  text-align: start;
+  border-radius: 15px;
+  min-width: fit-content;
+  transition: all 0.3s ease;
+  padding: 10px 20px 10px 5px;
+  border: 1px solid rgba(1, 1, 52, 0.26);
+}
+
+#Role:hover {
+  border-color: rgba(1, 1, 52, 0.5);
+}
+
+
+
+.role-badge {
+  min-width: 100px;
+  font-weight: 500;
+  padding: 3px 12px;
+  text-align: center;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.role-badge.doctor {
+  color: #0056d2;
+  background-color: #e6f0ff;
+}
+
+.role-badge.receptionist {
+  color: #187744;
+  background-color: #d8fddc;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.status-badge.active {
+  color: #187744;
+  background-color: #d8fddc;
+}
+
+.status-badge.inactive {
+  color: rgba(255, 0, 0, 0.775);
+  background-color: rgba(255, 0, 0, 0.299);
+}
+
+.rm-btn {
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: linear-gradient(to left, #2f6fc895, #2f6fc8);
+}
+
+.rm-btn:hover {
+  background-color: #2f6fc8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(47, 111, 200, 0.2);
+}
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+  .container1 {
+    margin-left: 15%;
+  }
+  .container1 .docInfo{
+    display: flex;
+    gap: 5px;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .container1 .docInfo .Info1 {
+    width: calc(90%/2);
+  }
+
+  .search1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search1 div {
+    width: 100%;
+  }
+
+  #Role {
+    width: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container1 {
+    margin-left: 18%;
+  }
+
+  .container1 .docInfo .Info1 {
+    width: 100%;
+  }
+
+  .staff-table1 {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .staff-table1 th,
+  .staff-table1 .row1 td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .role-badge,
+  .status-badge {
+    padding: 4px 8px;
+    font-size: 12px;
+    min-width: 80px;
+  }
+
+  .rm-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 568px) {
+  .container1 {
+    margin-left: 0;
+  }
+
+  .container1 .docInfo .Info1 {
+    padding: 15px;
+    height: auto;
+  }
+
+  .container1 .docInfo .Info1 img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .container1 .docInfo .Info1 div {
+    font-size: 16px;
+  }
+
+  .container1 .docInfo .Info1 div p:last-child {
+    font-size: 18px;
+  }
+
+  .search1 div input {
+    font-size: 16px;
+  }
+
+  #Role {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .staff-table1 th,
+  .staff-table1 .row1 td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .role-badge,
+  .status-badge {
+    padding: 3px 6px;
+    font-size: 11px;
+    min-width: 70px;
+  }
+
+  .rm-btn {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}

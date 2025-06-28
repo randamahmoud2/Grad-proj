@@ -1,0 +1,115 @@
+.AllDoctors{
+  margin-left: 11%;
+  padding: 0px 15px;
+
+}
+.doctoroptions .doctor{
+  margin: 0;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(7, 1fr);
+}
+.avability{
+  width: 200px;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #6495c0;
+  background: rgba(255, 255, 255, 0.562);
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.29);
+}
+.avability:hover{
+  transition: 0.5s;
+  translate: 0 -10px;
+  box-shadow: 0 0 10px rgb(128, 128, 128); 
+
+}
+.avability img{
+  width: 200px;
+  margin-bottom: 10px;
+  background: #b4d3ee6c;
+  border-radius: 10px 0px 0px 10px 0;
+}
+.appointment-Info{
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  padding-left: 15px;
+  align-items: start;
+  margin-bottom: 10px;
+  flex-direction: column;
+  color: rgba(4, 4, 86, 0.707);
+}
+.appointment-Info div{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding-bottom: 8px;
+}
+.appointment-Info div .dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 128, 0, 0.852);
+}
+@media (max-width: 1200px) {
+.doctoroptions .doctor {
+  grid-template-columns: repeat(4, 1fr);
+}
+.avability, .avability img {
+  width: 160px;
+}
+}
+@media (max-width: 992px) {
+.AllDoctors {
+  margin-left: 15%;
+  padding: 0 8px;
+}
+.doctoroptions .doctor {
+  grid-template-columns: repeat(4, 1fr);
+}
+.avability, .avability img {
+  width: 160px;
+}
+}
+@media (max-width: 768px) {
+.AllDoctors {
+  margin-left: 18%;
+}
+.doctoroptions .doctor {
+  grid-template-columns: repeat(4, 1fr);
+}
+.avability, .avability img {
+  width: 130px;
+}
+.appointment-Info {
+  font-size: 11px;
+  padding-left: 6px;
+}
+}
+@media (max-width: 576px) {
+.AllDoctors {
+  margin-left: 0;
+}
+.doctoroptions .doctor {
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+.avability, .avability img {
+  width: 300px
+}
+.avability img {
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+.appointment-Info div{
+  padding-left: 2px;
+  font-size: 16px;
+}
+.appointment-Info {
+  font-size: 15px;
+  padding-left: 10px;
+}
+}

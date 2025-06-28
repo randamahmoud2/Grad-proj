@@ -1,0 +1,201 @@
+.dashboard1 {
+    margin-left: 11%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+#split {
+    border: none;
+    background: linear-gradient(to right, #2a6dc9, #50b7f5, transparent);
+    margin: 10px 0 20px 0;
+    width: 100%;
+}
+
+.details {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Stats Cards */
+.up1 {
+    width: 73%;
+}
+
+.up1 .docInfo {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.up1 .docInfo .Info2 {
+    display: flex;
+    flex: 1;
+    gap: 15px;
+    padding: 15px;
+    overflow: hidden;
+    min-width: 220px;
+    position: relative;
+    border-radius: 8px;
+    align-items: center;
+    color: rgb(3, 3, 76);
+    border: 1px solid rgba(1, 1, 52, 0.188);
+}
+.up1 .docInfo .Info2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    height: 2px;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, #139af4, #2ecc71);
+}
+
+.up1 .docInfo .Info2 div {
+    gap: 3px;
+    font-size: 18px;
+}
+
+.title1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title1 div {
+    display: flex;
+    gap: 8px;
+    color: #2a6dc9;
+    font-weight: 600;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.title1 p {
+    font-size: 18px;
+}
+
+.title1 hr {
+    border: 1px solid rgba(1, 1, 52, 0.119);
+}
+
+.down1 {
+    width: 73%;
+    display: flex;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid rgba(1, 1, 52, 0.342);
+}
+
+
+.down1 .signupEntry {
+    margin-top: 20px;
+}
+
+.down1 div .Names{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.down1 div .datefee{
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.down1  .complete1 {
+    gap: 10px;
+}
+
+.down1  .complete1 button {
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+
+
+.complete1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.complete1 button {
+    border: none;
+    cursor: pointer;
+    background: rgba(42, 109, 201, 0.05);
+
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.complete1 button:hover {
+    background: rgba(42, 109, 201, 0.1);
+    transform: scale(1.1);
+}
+
+.complete1 button img {
+    transition: all 0.3s ease;
+}
+
+.complete1 p {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 13px ;
+    font-weight: 600;
+}
+
+.complete1 p[style*="green"] {
+    background: rgba(46, 125, 50, 0.1);
+    color: #2e7d32 ;
+}
+
+.complete1 p[style*="red"] {
+    background: rgba(211, 47, 47, 0.1);
+    color: #d32f2f ;
+}
+
+.complete1 p[style*="orange"] {
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800 ;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .up1 .docInfo .Info1 {
+        min-width: 200px;
+    }
+    
+}
+
+@media (max-width: 992px) {
+    .dashboard1 {
+        margin-left: 15%;
+    }
+    .up1 .docInfo .Info1 {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard1 {
+        padding: 10px;
+        margin-left: 18%;
+
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard1 {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* nav1 start */
+.nav1 {
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 60px;  
+    display: flex;
+    z-index: 9999;
+    position: fixed;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(237, 244, 250);
+    box-shadow: 0 0 10px rgba(101, 101, 101, 0.3);
+}
+
+.nav1 div{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav1 img{
+    width: 26px;
+    height: 26px;
+}
+
+.nav1 h1{
+    font-size: 24px;
+    color: #022253;
+    font-weight: 800;
+}
+
+.nav1-menu{
+    display: flex;
+    justify-content: center;
+}
+
+.nav1-menu ul{
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
+}
+
+.patientoption{
+    text-decoration: none;
+}
+
+.nav1-menu li{
+    font-size: 12px;
+    font-weight: 800;
+    color: #022e6f;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: 0px 12px;
+    background: transparent;
+}
+
+.nav1-menu li:hover{
+    color: #022e6f;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    background: transparent;
+} 
+
+#userPhoto1 {
+    width: 32px;
+    height: 32px;
+    margin: 0 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu1 {
+    right: 0;
+    top: 45px;
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 15px 10px;
+    min-width: 150px;
+    max-width: 220px;
+    overflow: visible;
+    margin-right: 12px;
+    border-radius: 10px;
+    position: absolute;
+    background: rgb(244, 248, 251);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.18);  
+    gap: 8px;
+}
+
+.dropdown-menu1 hr{
+    width: 100%;
+    height: 1px;
+    color: black;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu1 span {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    color: #022253;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 6px;
+    background: transparent;
+}
+
+.dropdown-menu1 span:hover {
+    background: #e3f0ff;
+    color: #1976d2;
+    letter-spacing: 0.5px;
+}
+/* Media Queries */
+@media (max-width: 992px) {
+    .nav1 {
+        height: 60px;
+        padding: 8px 15px;
+    }
+    
+    .nav1 h1 {
+        font-size: 16px;
+    }
+    
+    .nav1-menu li {
+        font-size: 13px;
+        margin: 0px 8px;
+    }
+    
+    .nav1-menu li:hover {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav1-menu ul {
+        gap: 10px;
+    }
+    
+    .nav1-menu li {
+        margin: 0px 5px;
+    }
+    
+    #userPhoto {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav1 {
+        height: 45px;
+        padding: 5px 10px;
+    }
+    
+    .nav1 img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .nav1 h1 {
+        font-size: 14px;
+    }
+    
+    .nav1-menu {
+        display: none;
+    }
+}

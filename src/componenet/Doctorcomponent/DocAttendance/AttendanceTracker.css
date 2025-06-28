@@ -1,0 +1,506 @@
+/* Modern Attendance Tracker Styles */
+:root {
+  --primary: #3a7bd5;
+  --primary-light: #f0f5ff;
+  --primary-dark: #2d5baa;
+  --success: #38c172;
+  --success-light: #f0fdf4;
+  --danger: #e3342f;
+  --danger-light: #fff5f5;
+  --warning: #f6ad55;
+  --warning-light: #fffbeb;
+  --neutral: #718096;
+  --neutral-light: #f7fafc;
+  --text-dark: #2d3748;
+  --text-gray: #718096;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-radius: 0.5rem;
+}
+
+/* Main container */
+.attendance-container {
+  margin-left: 11%;
+  padding: 0 15px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.attendance-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* Header styles */
+.attendance-header {
+  display: flex;
+  color: white;
+  font-size: 20px;
+  padding: 1.5rem;
+  font-weight: 600;
+  margin-top: 5px;
+
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  justify-content: space-between;
+  background-color: var(--primary);
+}
+
+.header-icon {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+.datetime-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.8rem;
+}
+
+.date-display, .time-display {
+  margin: 2px 0;
+}
+
+.label {
+  font-weight: 500;
+  margin-right: 5px;
+  opacity: 0.9;
+}
+
+/* Status container */
+.status-container {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.status-card {
+  background-color: var(--neutral-light);
+  border-radius: var(--border-radius);
+  padding: 0.8rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.checked-in-status, .checked-out-status {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.status-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.status-icon.success {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.status-icon.neutral {
+  background-color: var(--neutral-light);
+  color: var(--neutral);
+}
+
+.status-info h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.status-info p {
+  margin: 0 0 0.3rem 0;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.status-badge.present {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.status-badge.late {
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+
+.status-badge.absent {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-action svg {
+  font-size: 0.9rem;
+}
+
+.check-in {
+  background-color: var(--primary);
+  color: white;
+}
+
+.check-in:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.check-out {
+  background-color: var(--danger);
+  color: white;
+}
+
+.check-out:hover:not(:disabled) {
+  background-color: #c53030;
+}
+
+.map-btn {
+  background-color: var(--success);
+  color: white;
+}
+
+.map-btn:hover:not(:disabled) {
+  background-color: #2f9e5f;
+}
+
+.btn-action.disabled,
+.btn-action:disabled {
+  background-color: #cbd5e0;
+  color: #718096;
+  cursor: not-allowed;
+}
+
+/* Location card */
+.location-card {
+  margin: 0 0.8rem 0.8rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.location-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-light);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.location-header h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.verification-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.verification-badge.success {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.verification-badge.error {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.location-content {
+  padding: 1rem;
+  background-color: white;
+}
+
+.location-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--danger);
+  font-size: 0.8rem;
+}
+
+.error-icon {
+  font-size: 1rem;
+}
+
+.location-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+}
+
+.loading-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.icon-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.location-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.coordinates, .verification-status {
+  flex: 1;
+}
+
+.coordinates p, .verification-status p {
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  color: var(--text-dark);
+}
+
+.success-text {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.error-text {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.btn-map {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-map:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Attendance history section */
+.attendance-history-section {
+  padding: 0.8rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.attendance-history-section h3 {
+  margin: 0 0 0.6rem 0;
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.empty-history {
+  background-color: var(--neutral-light);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.attendance-table th {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-weight: 600;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.attendance-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-dark);
+}
+
+.attendance-table tr:last-child td {
+  border-bottom: none;
+}
+
+.attendance-table tr:nth-child(even) {
+  background-color: var(--neutral-light);
+}
+
+.table-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.table-badge.present {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.table-badge.late {
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+
+.table-badge.absent {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.btn-location {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-location:hover {
+  background-color: var(--primary-light);
+}
+
+.view-more {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive styles */
+
+@media (max-width: 992px) {
+  .attendance-container {
+      margin-left: 15%;
+  }
+}
+@media (max-width: 768px) {
+  .attendance-container {
+    margin-left: 18%;
+  }
+  .attendance-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .datetime-display {
+    margin-top: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .location-info {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .attendance-container {
+    margin-left: 0;
+  }
+  .status-container {
+    padding: 0.6rem;
+  }
+  
+  .checked-in-status, .checked-out-status {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .status-info {
+    width: 100%;
+  }
+  
+  .attendance-history-section {
+    padding: 0.6rem;
+  }
+  
+  .attendance-table th,
+  .attendance-table td {
+    padding: 0.4rem;
+    font-size: 0.7rem;
+  }
+} 

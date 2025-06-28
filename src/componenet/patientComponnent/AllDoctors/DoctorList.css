@@ -1,0 +1,24 @@
+.doctorList{
+    margin-left: 11%;
+    padding:0px 15px;
+}
+
+.special .link{
+    text-decoration: none;
+    color: black
+}
+@media (max-width: 992px) {
+    .doctorList{
+        margin-left: 15%;
+    }
+}
+@media (max-width: 768px) {
+    .doctorList{
+        margin-left: 18%;
+    }
+}
+@media (max-width: 576px) {
+    .doctorList{
+        margin-left: 0;
+    }
+}

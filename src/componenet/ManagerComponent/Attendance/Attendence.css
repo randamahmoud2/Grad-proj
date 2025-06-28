@@ -1,0 +1,244 @@
+.lrRight .tabs1{
+    display: flex;
+    margin-top: 20px;
+    align-items: start;
+    text-align: justify;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.lrRight .tabs1 .card1{
+    width: 100%;
+}
+.tabs1 .staff-table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.staff-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #042b63;   
+    border-bottom: 2px solid #e0e0e0;    
+    white-space: nowrap;
+}
+
+.staff-table .row td {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #042c63a0;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+.row:hover{
+    cursor: pointer;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+.record{
+    font-size: 10px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+
+.bottom{
+    padding: 20px;
+    display: flex;
+    overflow: auto;
+    max-height: 650px;
+    margin: 20px 10px;
+    align-items: start;
+    border-radius: 15px;
+    flex-direction: column;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.bottom:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.bottom .tabs{
+    width: 100%;
+}
+.bottom .subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: rgb(5, 5, 107);
+}
+.bottom .staffRole {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    margin: 20px 0;
+    padding: 5px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.bottom .staffRole::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    transform: translateX(-100%);
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.bottom .staffRole:hover::before {
+    transform: translateX(100%);
+}
+
+.bottom .staffRole:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.bottom .staffRole button {
+    border: none;
+    outline: none;
+    flex: 1;
+    z-index: 1;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    background: none;
+    color: #042c63bb;
+    position: relative;
+    padding: 12px 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.bottom .staffRole button:hover {
+    color: white;
+}
+
+.bottom .staffRole .activebtn {
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #0277bd, blue);
+}
+
+.record.present {
+    background-color: #e0f7e9;
+    color: #2e7d32;
+}
+.record.late {
+    background-color: #fff7d1;
+    color: #f9a825;
+}
+.record.absent {
+    background-color: #fdecea;
+    color: #c62828;
+}
+.record.leave {
+    background-color: #e1f5fe;
+    color: #0277bd;
+}
+.record.no-record {
+    background-color: #f0f0f0;
+    color: #757575;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .bottom {
+        margin: 20px 5px;
+    }
+}
+
+@media (max-width: 992px) {
+    .bottom {
+        margin: 15px 0;
+    }
+
+    .bottom .staffRole {
+        max-width: 100%;
+    }
+
+    .staff-table th,
+    .staff-table .row td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom {
+        padding: 15px;
+    }
+
+    .bottom .subtitle {
+        font-size: 15px;
+    }
+
+    .bottom .staffRole {
+        max-width: 100%;
+        padding: 4px;
+    }
+
+    .bottom .staffRole button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .staff-table th,
+    .staff-table .row td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .record {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bottom {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .bottom .subtitle {
+        font-size: 14px;
+    }
+
+    .bottom .staffRole {
+        margin: 15px 0;
+    }
+
+    .bottom .staffRole button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .staff-table th,
+    .staff-table .row td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .record {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}

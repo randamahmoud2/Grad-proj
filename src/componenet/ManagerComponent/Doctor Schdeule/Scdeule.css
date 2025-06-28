@@ -1,0 +1,319 @@
+.docSchdeule {
+    margin-left: 11%;
+    padding: 0 15px;
+}
+
+.body1 {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.smLeft {
+    width: 40%;
+    height: 500px;
+    display: flex;
+    padding: 20px;
+    margin: 20px 10px;
+    align-items: start;
+    border-radius: 15px;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.smLeft:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.smLeft strong {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: rgb(5, 5, 107);
+}
+
+.calender1 {
+    width: 95%;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    padding-bottom: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.smLeft .calendar-header {
+    display: flex;
+    margin: 0 8px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2f6fc8;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar-header button {
+    opacity: 0.8;
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    background: none;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 50%;
+    color: #2f6fc8;
+    border: 2px solid #2f6fc8;
+    transition: all 0.3s ease;
+}
+
+.calendar-header button:hover {
+    color: white;
+    background: #2f6fc8;
+    transform: scale(1.1);
+}
+
+.days-name, .days {
+    display: grid;
+    gap: 10px;
+    width: 90%;
+    opacity: 0.8;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 600;
+    margin-left: 17px;
+    text-align: center;
+    color: #042b63;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-name {
+    opacity: 0.8;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 5px 0;
+}
+
+.day {
+    padding: 8px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.day:hover {
+    color: white;
+    background: #2f6fc8;
+    transform: scale(1.1);
+}
+
+.empty-day {
+    background: #f5f5f5;
+}
+
+.today,
+.selected {
+    color: white;
+    font-weight: bold;
+    background: #2f6fc8;
+}
+
+.lrRight {
+    display: flex;
+    width: 50%;
+    padding: 20px;
+    margin: 20px 0;
+    overflow-y: auto;
+    max-height: 650px;
+    min-height: 650px;
+    align-items: start;
+    border-radius: 15px;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lrRight:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.lrRight .subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: rgb(5, 5, 107);
+}
+
+.docattend {
+    border: none;
+    width: 150px;
+    outline: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    appearance: none;
+    margin-top: 20px;
+    line-height: 1.6;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #2f6fc8, #2f6fc8);
+}
+
+.docattend:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.docattend option {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-weight: 600;
+    overflow-y: auto;
+    background: white;
+    color: rgb(3, 51, 147);
+}
+
+.lrRight .tabs {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    overflow: hidden;
+    align-items: start;
+    text-align: justify;
+    border-radius: 12px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.lrRight .tabs .card1 {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1272px) {
+    .lrRight {
+        width: 60%;
+    }
+    .smLeft {
+        width: 35%;
+    }
+    .day-name{
+        font-size: 12px;
+        font-weight: 800;
+    }
+    .day{
+        font-size: 10px;
+        font-weight: 800;
+    }
+    .lrRight .tabs1 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .docSchdeule {
+        margin-left: 15%;
+    }
+
+    .body {
+        flex-direction: column;
+    }
+
+    .smLeft, .lrRight {
+        width: 90%;
+    }
+
+    .smLeft {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .docSchdeule {
+        margin-left: 18%;
+    }
+
+    .smLeft, .lrRight {
+        width: 90%;
+        margin: 15px 0;
+    }
+    .smLeft{
+        height: 400px;
+    }
+
+    .calendar-header button {
+        margin: 0 10px;
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .days-name, .days {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .day {
+        padding: 6px 0;
+    }
+
+    .docattend {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .docSchdeule {
+        margin-left: 0;
+    }
+
+    .data2 .title {
+        font-size: 20px;
+    }
+
+    .smLeft strong,
+    .lrRight .subtitle {
+        font-size: 14px;
+    }
+
+    .calendar-header {
+        font-size: 14px;
+    }
+    .calender{
+        height: 250px;
+    }
+
+    .calendar-header button {
+        margin: 0 5px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .days-name, .days {
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .day {
+        padding: 4px 0;
+    }
+
+    .docattend {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+
+    .staff-table2 th,
+    .staff-table2 .row2 td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
