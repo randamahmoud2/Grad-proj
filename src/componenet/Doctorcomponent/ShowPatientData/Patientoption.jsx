@@ -69,6 +69,7 @@ export const Patientoption = () => {
                         >
                             Periodontal Chart {summary?.PerioChartCount > 0 && `(${summary.PerioChartCount})`}
                         </li>
+                        <li className="patientoption" onClick={() => navigate(`/Doctor/Patient/${id}/DentalProcedures`)}>Dental Procedures</li>
                         <li 
                             className="patientoption" 
                             onClick={() => navigate(`/Doctor/Patient/${id}/Image`)}

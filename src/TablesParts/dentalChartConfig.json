@@ -1,0 +1,1644 @@
+{
+    "tables": [
+        {
+            "name": "Table1Up",
+            "position": "upper",
+            "chart_surface": "Buccal",
+            "teeth": [
+                {
+                    "id": 17,
+                    "implant": true,
+                    "plaque": {
+                        "c": true
+                    },
+                    "mobility": 0,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 18,
+                    "implant": false,
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    },
+                    "mobility": 0,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    }
+                },
+                {
+                    "id": 16,
+                    "implant": false,
+                    "gingival_depth": {
+                        "a": 4,
+                        "b": 5,
+                        "c": 1
+                    },
+                    "bleed_on_probing": {
+                        "b": true
+                    },
+                    "mobility": 0,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 15,
+                    "implant": false,
+                    "plaque": {
+                        "a": true
+                    }
+                },
+                {
+                    "id": 14,
+                    "implant": false,
+                    "mobility": 0,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {},
+                    "probing_depth": {}
+                },
+                {
+                    "id": 12,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 11,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 21,
+                    "implant": false,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 13,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 23,
+                    "implant": false,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 25,
+                    "implant": true,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                },
+                {
+                    "id": 28,
+                    "mobility": 1,
+                    "implant": false,
+                    "furcation": {
+                        "m": 0,
+                        "d": 0,
+                        "c": 0
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    },
+                    "probing_depth": {
+                        "a": 0,
+                        "b": 0,
+                        "c": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Table1Down",
+            "position": "upper",
+            "chart_surface": "Palatal",
+            "teeth": [
+                {
+                    "id": 11,
+                    "mobility": 0,
+                    "implant": true,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 5,
+                        "b": 5,
+                        "c": 5
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 4,
+                        "c": 3
+                    }
+                },
+                {
+                    "id": 12,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 2,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 13,
+                    "mobility": 2,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 14,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 15,
+                    "mobility": 1,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    }
+                },
+                {
+                    "id": 16,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 2
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 17,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1,
+                        "m": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 3
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 4
+                    }
+                },
+                {
+                    "id": 18,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 21,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 22,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 2,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 23,
+                    "mobility": 2,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 24,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 25,
+                    "mobility": 1,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    }
+                },
+                {
+                    "id": 26,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 2
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 27,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1,
+                        "m": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 3
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 4
+                    }
+                },
+                {
+                    "id": 28,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Table2Up",
+            "position": "lower",
+            "chart_surface": "Lingual",
+            "teeth": [
+                {
+                    "id": 31,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 4,
+                        "c": 3
+                    }
+                },
+                {
+                    "id": 32,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 2,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 33,
+                    "mobility": 2,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 34,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 35,
+                    "mobility": 1,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    }
+                },
+                {
+                    "id": 36,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 2
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 37,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1,
+                        "m": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 3
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 4
+                    }
+                },
+                {
+                    "id": 38,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 41,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 4,
+                        "c": 3
+                    }
+                },
+                {
+                    "id": 42,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 2,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 43,
+                    "mobility": 2,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 44,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 45,
+                    "mobility": 1,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    }
+                },
+                {
+                    "id": 46,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 2
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 47,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1,
+                        "m": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 3
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 4
+                    }
+                },
+                {
+                    "id": 48,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Table2Down",
+            "position": "lower",
+            "chart_surface": "Buccal",
+            "teeth": [
+                {
+                    "id": 31,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 4,
+                        "c": 3
+                    }
+                },
+                {
+                    "id": 32,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 2,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 33,
+                    "mobility": 2,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 34,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 35,
+                    "mobility": 1,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    }
+                },
+                {
+                    "id": 36,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 2
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 37,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1,
+                        "m": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 3
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 4
+                    }
+                },
+                {
+                    "id": 38,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 41,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 4,
+                        "c": 3
+                    }
+                },
+                {
+                    "id": 42,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 2,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 43,
+                    "mobility": 2,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 44,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 45,
+                    "mobility": 1,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": true,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": true
+                    },
+                    "gingival_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    },
+                    "probing_depth": {
+                        "a": 1,
+                        "b": 1,
+                        "c": 1
+                    }
+                },
+                {
+                    "id": 46,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {
+                        "m": 2
+                    },
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": true,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 3,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 3,
+                        "b": 3,
+                        "c": 2
+                    }
+                },
+                {
+                    "id": 47,
+                    "mobility": 1,
+                    "implant": true,
+                    "furcation": {
+                        "d": 1,
+                        "m": 1
+                    },
+                    "bleed_on_probing": {
+                        "a": true,
+                        "b": false,
+                        "c": true
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": true,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 3,
+                        "b": 2,
+                        "c": 3
+                    },
+                    "probing_depth": {
+                        "a": 4,
+                        "b": 3,
+                        "c": 4
+                    }
+                },
+                {
+                    "id": 48,
+                    "mobility": 0,
+                    "implant": false,
+                    "furcation": {},
+                    "bleed_on_probing": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "plaque": {
+                        "a": false,
+                        "b": false,
+                        "c": false
+                    },
+                    "gingival_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    },
+                    "probing_depth": {
+                        "a": 2,
+                        "b": 2,
+                        "c": 2
+                    }
+                }
+            ]
+        }
+    ]
+}

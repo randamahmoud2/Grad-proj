@@ -3,70 +3,22 @@ import './PatientDashboard.css';
 import { FaUserMd, FaCalendarAlt, FaPlus } from "react-icons/fa";
 import Notification from '../../components/Notification';
 
-const patient = {
-  name: "John Patel",
-  id: "PTN-24680",
-  dob: "05/12/1985",
-  status: "Active Patient",
-  bloodType: "A+",
-  primaryDoctor: "Dr. Sarah Wilson",
-  nextAppointment: "May 24, 2025"
-};
-
-const appointments = [
-  {
-    doctor: "Dr. Sarah Wilson",
-    specialty: "Primary Care",
-    date: "May 24, 2025",
-    time: "10:30 AM",
-    status: "Cancelled"
-  },
-  {
-    doctor: "Dr. Michael Chen",
-    specialty: "Cardiology",
-    date: "June 12, 2025",
-    time: "2:00 PM",
-    status: "Upcoming"
-  },
-  {
-    doctor: "Dr. Emily Johnson",
-    specialty: "Dermatology",
-    date: "May 2, 2025",
-    time: "9:15 AM",
-    status: "Completed"
-  }
-];
-
-const activity = [
-  {
-    type: "Appointment",
-    status: "completed",
-    date: "May 2, 2025 • 9:15 AM",
-    desc: "with Dr. Sarah Wilson - Primary Care"
-  },
-  {
-    type: "Lab results",
-    status: "received",
-    date: "May 1, 2025 • 2:30 PM",
-    desc: "Blood work panel - Within normal ranges"
-  },
-  {
-    type: "Message",
-    status: "from Dr. Wilson",
-    date: "May 1, 2025 • 11:05 AM",
-    desc: "Regarding your recent lab results"
-  }
-];
+const API_BASE_URL = "http://localhost:5068/api";
 
 const PatientDashboard = () => {
-  // Notification state for login success
+  const [dashboardData, setDashboardData] = useState({
+    patient: null,
+    upcomingAppointments: [],
+  });
+  const [isLoading, setIsLoading] = useState(true);
   const [notification, setNotification] = useState({
     isVisible: false,
     message: '',
     type: 'info'
   });
 
-  // Check for login success on component mount
+  const patientId = localStorage.getItem('patientId');
+
   useEffect(() => {
     const loginSuccess = localStorage.getItem('loginSuccess');
     if (loginSuccess) {
@@ -81,27 +33,116 @@ const PatientDashboard = () => {
           type: 'success'
         });
         
-        // Remove the login success data from localStorage
-        localStorage.removeItem('loginSuccess');
-        
-        // Auto-hide after 8 seconds
         setTimeout(() => {
           setNotification(prev => ({ ...prev, isVisible: false }));
         }, 8000);
+        
+        localStorage.removeItem('loginSuccess');
       } catch (error) {
         console.error('Error parsing login success data:', error);
         localStorage.removeItem('loginSuccess');
       }
     }
-  }, []);
+
+    const fetchDashboardData = async () => {
+      if (!patientId) {
+        setNotification({
+          isVisible: true,
+          message: 'Please log in to view your dashboard',
+          type: 'error'
+        });
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+        console.log(`Fetching dashboard data for patient ID: ${patientId}`);
+        const response = await fetch(`${API_BASE_URL}/Patients/${patientId}/dashboard`);
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || errorData.message || `Failed to fetch dashboard data: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Dashboard data fetched:', data);
+
+        setDashboardData({
+          patient: {
+            id: data.patient?.patientId || data.patient?.id || 'N/A',
+            name: data.patient?.name || 'Unknown Patient',
+            dob: data.patient?.dob ? new Date(data.patient.dob).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }) : 'N/A',
+            status: data.patient?.status || 'Active Patient',
+            bloodType: data.patient?.bloodType || 'N/A',
+            nextAppointment: data.patient?.nextAppointment ? new Date(data.patient.nextAppointment).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'N/A'
+          },
+          upcomingAppointments: data.upcomingAppointments?.map(appt => ({
+            doctor: appt.doctorName || appt.doctor || 'N/A',
+            specialty: appt.specialty || 'N/A',
+            date: appt.date ? new Date(appt.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'N/A',
+            time: appt.time || appt.timeSlot || 'N/A',
+            status: appt.status || 'N/A',
+            procedure: appt.procedure || 'N/A'
+          })) || []
+        });
+      } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+        setNotification({
+          isVisible: true,
+          message: 'Failed to load dashboard data',
+          type: 'error'
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, [patientId]);
 
   const hideNotification = () => {
     setNotification(prev => ({ ...prev, isVisible: false }));
   };
 
+  if (isLoading) {
+    return (
+      <div className="patient-dashboard-portal">
+        {notification.isVisible && (
+          <Notification
+            isVisible={notification.isVisible}
+            message={notification.message}
+            type={notification.type}
+            onClose={hideNotification}
+            autoClose={true}
+            duration={8000}
+          />
+        )}
+        <div>Loading patient data...</div>
+      </div>
+    );
+  }
+
+  if (!dashboardData.patient) {
+    return (
+      <div className="patient-dashboard-portal">
+        {notification.isVisible && (
+          <Notification
+            isVisible={notification.isVisible}
+            message={notification.message}
+            type={notification.type}
+            onClose={hideNotification}
+            autoClose={true}
+            duration={8000}
+          />
+        )}
+        <div>Error: Unable to load patient data</div>
+      </div>
+    );
+  }
+
+  const { patient, upcomingAppointments } = dashboardData;
+
   return (
     <div className="patient-dashboard-portal">
-      {/* Notification Component */}
       {notification.isVisible && (
         <Notification
           isVisible={notification.isVisible}
@@ -145,18 +186,23 @@ const PatientDashboard = () => {
             <h3><FaCalendarAlt /> Appointments</h3>
           </div>
           <div className="appointments-list">
-            {appointments.map((a, i) => (
-              <div className="appointment-card" key={i}>
-                <div>
-                  <div className="doctor-name">{a.doctor}</div>
-                  <div className="specialty">{a.specialty}</div>
+            {upcomingAppointments.length > 0 ? (
+              upcomingAppointments.map((a, i) => (
+                <div className="appointment-card" key={i}>
+                  <div>
+                    <div className="doctor-name">{a.doctor}</div>
+                    <div className="specialty">{a.specialty}</div>
+                  </div>
+                  <div className="appointment-meta">
+                    <span>{a.date} • {a.time}</span>
+                    <span className={`status-badge ${a.status.toLowerCase()}`}>{a.status}</span>
+                    <span className="procedure">{a.procedure}</span>
+                  </div>
                 </div>
-                <div className="appointment-meta">
-                  <span>{a.date} • {a.time}</span>
-                  <span className={`status-badge ${a.status.toLowerCase()}`}>{a.status}</span>
-                </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <div>No appointments available</div>
+            )}
           </div>
         </div>
       </div>

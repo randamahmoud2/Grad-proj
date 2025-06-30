@@ -49,6 +49,7 @@ import ViewPatientPayment from './componenet/ReciptionaistComponent/patientData/
 import ShowAllAppointments from './componenet/ReciptionaistComponent/Appointment/ShowAllAppointments.jsx';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import DentalProcedures from './pages/Doctor/DentalProcedures.jsx';
 
 const App = () => {
     return (
@@ -107,6 +108,7 @@ const App = () => {
                         <Route path="Patient/:id/Upload" element={<Patientupload />} />
                         <Route path="Patient/:id/PerioChart" element={<PerioChart />} />
                         <Route path="Patient/:id/Prescription" element={<Prescription />} />
+                        <Route path='Patient/:id/DentalProcedures' element={<DentalProcedures />}/>
                         <Route path="Patient/:id/Prescription/update" element={<Editprescription />} />
                         <Route path="Patient/:id/Prescription/AddPrescription" element={<AddPrescription />} /> 
                     </Route>

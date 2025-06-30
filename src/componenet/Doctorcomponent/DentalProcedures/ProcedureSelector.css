@@ -1,0 +1,192 @@
+.procedure-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.procedure-selector {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 600px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.procedure-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: #f9f9f9;
+}
+
+.procedure-selector-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+/* Existing procedures section */
+.existing-procedures {
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.existing-procedures h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.existing-procedures ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.existing-procedures li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.existing-procedures li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* Procedure list */
+.procedure-list {
+  padding: 15px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.procedure-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.procedure-option:hover {
+  border-color: #3498db;
+  box-shadow: 0 2px 5px rgba(52, 152, 219, 0.1);
+  transform: translateY(-2px);
+}
+
+.procedure-option:last-child {
+  margin-bottom: 0;
+}
+
+.procedure-name-container {
+  display: flex;
+  align-items: center;
+}
+
+.procedure-color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.procedure-color-indicator.crown {
+  background-color: #f39c12;
+}
+
+.procedure-color-indicator.filling {
+  background-color: #2ecc71;
+}
+
+.procedure-color-indicator.root-canal {
+  background-color: #3498db;
+}
+
+.procedure-color-indicator.extraction {
+  background-color: #e74c3c;
+}
+
+.procedure-color-indicator.implant {
+  background-color: #9b59b6;
+}
+
+.procedure-color-indicator.cleaning {
+  background-color: #1abc9c;
+}
+
+.procedure-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.procedure-cost {
+  font-weight: 500;
+  color: #16a085;
+}
+
+@media (max-width: 768px) {
+  .procedure-selector {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .procedure-selector-header h3 {
+    font-size: 16px;
+  }
+  
+  .procedure-option {
+    padding: 10px;
+  }
+} 

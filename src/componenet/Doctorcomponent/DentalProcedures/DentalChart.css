@@ -1,0 +1,338 @@
+.dental-chart {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: auto;
+}
+
+.chart-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.chart-title h3 {
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.chart-title p {
+  color: #7f8c8d;
+  font-size: 15px;
+  margin: 0;
+}
+
+.teeth-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-bottom: 35px;
+  padding: 15px 0;
+  overflow-x: auto;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
+}
+
+.teeth-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  min-width: max-content;
+  padding: 0 25px;
+}
+
+.tooth {
+  position: relative;
+  width: 75px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tooth:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tooth.selected {
+  background-color: rgba(52, 152, 219, 0.15);
+  box-shadow: 0 0 0 3px #3498db, 0 5px 15px rgba(52, 152, 219, 0.2);
+  transform: translateY(-4px) scale(1.05);
+}
+
+.tooth.hovered {
+  background-color: rgba(52, 152, 219, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tooth-image-container {
+  width: 65px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.tooth-image {
+  width: 100%;
+  height: auto;
+  max-height: 65px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tooth:hover .tooth-image {
+  transform: scale(1.1);
+}
+
+.tooth.selected .tooth-image {
+  transform: scale(1.1);
+}
+
+.tooth-number {
+  font-size: 13px;
+  font-weight: bold;
+  color: #34495e;
+  margin-top: 8px;
+  background-color: #f1f2f6;
+  padding: 3px 8px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.procedure-indicator {
+  position: absolute;
+  bottom: -8px;
+  font-size: 11px;
+  background-color: #3498db;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+/* Tooth status classes - using different image styles instead of borders */
+.implant-tooth .tooth-image-container {
+  background-color: rgba(155, 89, 182, 0.05);
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.1);
+}
+
+.crown-tooth .tooth-image-container {
+  background-color: rgba(243, 156, 18, 0.05);
+  box-shadow: 0 0 10px rgba(243, 156, 18, 0.1);
+}
+
+.extraction-tooth .tooth-image-container {
+  background-color: rgba(231, 76, 60, 0.05);
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.1);
+}
+
+.root-canal-tooth .tooth-image-container {
+  background-color: rgba(52, 152, 219, 0.05);
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.1);
+}
+
+.filling-tooth .tooth-image-container {
+  background-color: rgba(46, 204, 113, 0.05);
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.1);
+}
+
+.cleaning-tooth .tooth-image-container {
+  background-color: rgba(26, 188, 156, 0.05);
+  box-shadow: 0 0 10px rgba(26, 188, 156, 0.1);
+}
+
+/* Procedures summary table */
+.procedures-summary {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.procedures-summary h3 {
+  color: #2a6dc9;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.procedures-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.procedures-table th,
+.procedures-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.procedures-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #2a6dc9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.procedures-table tbody tr:hover {
+  background-color: #f5f7fa;
+}
+
+.no-procedures {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 20px;
+  font-style: italic;
+}
+
+.total-label {
+  text-align: right;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.total-amount {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+/* Selected tooth details */
+.selected-tooth-details {
+  margin-top: 35px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border-left: 5px solid #3498db;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.selected-tooth-details h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tooth-procedures-list {
+  padding: 10px;
+}
+
+.tooth-procedures-list h4 {
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.tooth-procedures-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tooth-procedures-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.tooth-procedures-list li:last-child {
+  border-bottom: none;
+}
+
+.procedure-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.procedure-cost {
+  font-weight: 600;
+  color: #16a085;
+}
+
+.tooth-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid #ecf0f1;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .teeth-row {
+    gap: 5px;
+  }
+  
+  .tooth {
+    width: 55px;
+    height: 85px;
+  }
+  
+  .tooth-image-container {
+    width: 50px;
+    height: 60px;
+  }
+  
+  .procedures-table {
+    min-width: 100%;
+  }
+  
+  .procedures-table th,
+  .procedures-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+} 
