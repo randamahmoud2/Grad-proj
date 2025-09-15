@@ -189,10 +189,10 @@ const SelectAppoint = () => {
                                         <p className='docname'>{doctor.name}</p>
                                         {/* <p className="doctor-specialty">Specialization: {doctor.specialty}</p> */}
                                         <div>
-                                            <p className='doc-about'>About </p>
+                                            {/* <p className='doc-about'>About </p>
                                             <p className='doc-about-p'>
                                                 Dr. Heba has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Heba has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.
-                                            </p>
+                                            </p> */}
                                         </div>
                                         <p className='doc-price'>Appointment fee: ${doctor.fee}</p>
                                     </div>

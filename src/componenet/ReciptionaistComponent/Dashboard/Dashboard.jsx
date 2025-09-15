@@ -60,25 +60,29 @@ export const DashBoardInfo = () => {
 
     useEffect(() => {
         const fetchBookings = async () => {
-           try {
-    const response = await fetch("http://localhost:5068/api/Bookings");
-    if (!response.ok) {
-        throw new Error('Failed to fetch bookings');
-    }
-    const data = await response.json();
-    
-    setBookings(data);
-    const earnings = data
-        .filter(b => b.status === "Paid")
-        .reduce((acc, cur) => acc + (cur.doctor?.fee || 0), 0);
-        setTotalFees(earnings);
-    
-} catch (err) {
-    setError(err.message);
-    console.error("Error fetching bookings:", err);
-} finally {
-    setLoading(false);
-}
+            try {
+                const response = await fetch("http://localhost:5068/api/Bookings");
+                if (!response.ok) {
+                    throw new Error('Failed to fetch bookings');
+                }
+                const data = await response.json();
+                
+                // Sort bookings by bookingDate (newest first)
+                const sortedBookings = data.sort((a, b) => 
+                    new Date(b.bookingDate) - new Date(a.bookingDate)
+                );
+                
+                setBookings(sortedBookings);
+                const earnings = sortedBookings
+                    .filter(b => b.status === "Paid")
+                    .reduce((acc, cur) => acc + (cur.doctor?.fee || 0), 0);
+                setTotalFees(earnings);
+            } catch (err) {
+                setError(err.message);
+                console.error("Error fetching bookings:", err);
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchBookings();
@@ -115,49 +119,45 @@ export const DashBoardInfo = () => {
         }
     };
 
-  useEffect(() => {
-    const fetchEarnings = async () => {
-      if (!doctorId) {
-        console.error('No doctorId found in localStorage');
+    useEffect(() => {
+        const fetchEarnings = async () => {
+            if (!doctorId) {
+                console.error('No doctorId found in localStorage');
                 setLoading(true);
-        return;
-      }
+                return;
+            }
 
-      try {
-        const response = await fetch(`http://localhost:5068/api/Dashboard/GetAdminEarning/`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+            try {
+                const response = await fetch(`http://localhost:5068/api/Dashboard/GetAdminEarning/`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
-                console.log(data)
                 
-        // Get the first object
-        const firstItem = data[0];
+                // Get the first object
+                const firstItem = data[0];
 
-        // Extract totalEarningsFees
-        const totalEarnings = firstItem.totalEarningsFees;
+                // Extract totalEarningsFees
+                const totalEarnings = firstItem.totalEarningsFees;
 
-        console.log(totalEarnings); // Output: 50
-        if (totalEarnings) {
-          setEarnings(totalEarnings);
-        } else {
-          console.warn('No earnings found for this doctor.');
-          setEarnings(0);
-        }
-       
-      } catch (error) {
-        console.error('Error fetching earnings:', error);
-      } finally {
+                if (totalEarnings) {
+                    setEarnings(totalEarnings);
+                } else {
+                    console.warn('No earnings found for this doctor.');
+                    setEarnings(0);
+                }
+            } catch (error) {
+                console.error('Error fetching earnings:', error);
+            } finally {
                 setLoading(false);
-      }
-    };
+            }
+        };
 
-    fetchEarnings();
-  }, []);
+        fetchEarnings();
+    }, []);
 
     if (loading) return <div className="loading">Loading dashboard data...</div>;
     if (error) return <div className="error">{error}</div>;
-
 
     return (
         <div className="dashboard1">
@@ -219,17 +219,15 @@ export const DashBoardInfo = () => {
                             There Are No Appointments
                         </p>
                     ) : (
-                        bookings.slice(0, 5).map((booking) => (
+                        bookings.slice(0, 4).map((booking) => (
                             <div className="signupEntry" key={booking.id}>
                                 <div className="userInfo">
                                     <img src={profile} alt="" style={{ width: "40px", height: "40px" }} />
                                     <div>
                                         <p className="Names">
-                                           {booking.doctorName || "Doctor"} | {booking.patientName|| "Patient"} 
+                                            {booking.doctorName || "Doctor"} | {booking.patientName || "Patient"}
                                         </p>
-                                      {console.log(bookings)}
                                         <p className="datefee">Booking on {new Date(booking.bookingDate).toLocaleDateString()}</p>
-
                                         <p className="datefee">Fees: ${booking.amount?.toFixed(2) || "0.00"}</p>
                                     </div>
                                 </div>

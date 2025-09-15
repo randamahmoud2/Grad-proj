@@ -80,7 +80,7 @@ const ShowAppointment = () => {
                                     <img src={appt.doctor?.image || user} alt="Doctor" />
                                 </div>
                                 <div className='summary-info'>
-                                    <p className='appointment-doc-name'>Dr.{appt.doctor?.name || 'Doctor'}</p>
+                                    <p className='appointment-doc-name'>{appt.doctor?.name || 'Doctor'}</p>
                                     <p style={{ color: "rgba(56, 56, 180, 0.7)" }}>
                                         <strong style={{ color: "#357adb" }}>Day & Time:</strong><br />
                                         {new Date(appt.appointmentDate).toLocaleDateString()} | {appt.timeSlot}

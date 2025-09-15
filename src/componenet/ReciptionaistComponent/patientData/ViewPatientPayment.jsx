@@ -1,23 +1,44 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
-import { Patientoption } from './patientoption'
-import { FaMoneyBillWave, FaFileInvoiceDollar, FaFilter } from 'react-icons/fa'
-import './ViewPatientPayment.css'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { Patientoption } from './patientoption';
+import { FaMoneyBillWave, FaFileInvoiceDollar, FaFilter } from 'react-icons/fa';
+import './ViewPatientPayment.css';
 
 const ViewPatientPayment = () => {
   const { id } = useParams();
-  const [payments, setPayments] = useState([])
-  const [filterStatus, setFilterStatus] = useState('all')
-  const [showFilters, setShowFilters] = useState(false)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [payments, setPayments] = useState([]);
+  const [filterStatus, setFilterStatus] = useState('all');
+  const [showFilters, setShowFilters] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await axios.get(`http://localhost:5068/api/patients/${id}/payments`);
-        setPayments(response.data);
+        const response = await fetch(`http://localhost:5068/api/Payment/patient/${id}`, {
+          method: 'GET',
+          headers: {
+            'Accept': '*/*',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to load payment history');
+        }
+
+        const data = await response.json();
+        // تحويل البيانات لتتطابق مع المتوقع في الفرونت إند
+        const transformedData = data.map(payment => ({
+          id: payment.id,
+          date: payment.date,
+          name: payment.procedure || 'Dental Procedure', // اسم افتراضي أو من جدول Procedures
+          doctor: payment.doctor || 'Dr. Unknown', // دكتور افتراضي
+          amount: payment.amount, // Cost من ToothProcedures
+          status: payment.status || 'Paid', // افتراضياً Paid
+          type: 'procedure', // دايماً procedure لأنها من ToothProcedures
+        }));
+
+        setPayments(transformedData);
       } catch (err) {
         setError('Failed to load payment history. Please try again later.');
         console.error('Error fetching payments:', err);
@@ -48,7 +69,7 @@ const ViewPatientPayment = () => {
 
   return (
     <div className='patientdata1'>
-      <Patientoption/>
+      <Patientoption />
       <div className='data2'>
         <div className='title2'>
           <p>Patient Payment History</p>
@@ -108,7 +129,7 @@ const ViewPatientPayment = () => {
                   <div className="payment-info">
                     <div className="payment-type">
                       {payment.type === 'consultation' ? <FaMoneyBillWave /> : <FaFileInvoiceDollar />}
-                      <span>{payment.type === 'consultation' ? 'Consultation' : 'Procedure'}</span>
+                      <span>{payment.type === 'consultation' ? 'Consult Misc' : `Procedure (Tooth ${payment.toothNumber || 'N/A'})`}</span>
                     </div>
                     <div className="payment-details">
                       <h4>{payment.name}</h4>
@@ -129,7 +150,7 @@ const ViewPatientPayment = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ViewPatientPayment;

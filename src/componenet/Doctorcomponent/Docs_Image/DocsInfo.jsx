@@ -118,7 +118,7 @@ export const DocsInfo = () => {
       const formData = new FormData();
       formData.append("File", file);
       formData.append("PatientId", id);
-      formData.append("UploadedBy", "Doctor name");
+      // formData.append("UploadedBy", "Doctor name");
       formData.append("DocumentType", documentType);
 
       try {
@@ -222,9 +222,9 @@ export const DocsInfo = () => {
               />
             </div>
 
-            <p>
+            {/* <p>
               Uploaded By <span style={{ marginLeft: "66px" }}>Doctor name</span>
-            </p>
+            </p> */}
 
             <div
               className="doctype"

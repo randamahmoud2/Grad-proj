@@ -121,19 +121,18 @@ const ShowAllAppointments = () => {
                     Oops! There Is No Appointment
                 </h3>
             ) : (
-                
                 appointments.map((appt, index) => (
                     <div key={appt.id}>
-                        {console.log(appt.patient.name)}
                         <div className='booking-summary'>
                             <div className='summary-doc'>
                                 <div>
-                                <img src={appt.doctor?.image || user} alt="Doctor" />
+                                    <img src={appt.doctor?.image || user} alt="Doctor" />
                                 </div>
                                 <div className='summary-info'>
                                     <p className='appointment-doc-name'>
-                                       {appt.doctor.name} | {appt.patient.name}
+                                        {appt.doctor.name} | {appt.patient.name}
                                     </p>
+
                                     <strong style={{ color: '#357adb' }}>Day & Time: </strong>
                                     <p style={{ color: 'rgba(66, 66, 68, 0.7)', fontSize:"16px" }}>
                                         {(() => {
@@ -141,10 +140,7 @@ const ShowAllAppointments = () => {
                                             const day = String(date.getDate()).padStart(2, '0');
                                             const month = String(date.getMonth() + 1).padStart(2, '0');
                                             const year = date.getFullYear();
-                                            const hours = String(date.getHours()).padStart(2, '0');
-                                            const minutes = String(date.getMinutes()).padStart(2, '0');
-
-                                            return `${day}-${month}-${year} | ${hours}:${minutes}`;
+                                            return `${day}-${month}-${year} | ${appt.timeSlot}`;
                                         })()}
                                     </p>
                                 </div>

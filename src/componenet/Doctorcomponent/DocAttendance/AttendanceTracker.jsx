@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaCalendarAlt, FaClock, FaSignInAlt, FaSignOutAlt, FaMapMarkerAlt, FaCheck, FaTimes, FaSpinner } from 'react-icons/fa';
 import './AttendanceTracker.css';
 
 const AttendanceTracker = () => {
   const API_BASE_URL = "http://localhost:5068/api/attendance";
-  const doctorId = 1; // Replace with actual doctor ID from authentication
+  const navigate = useNavigate();
+  const doctorId = localStorage.getItem('doctorId');
 
   const [currentTime, setCurrentTime] = useState(new Date());
   const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
@@ -14,7 +16,6 @@ const AttendanceTracker = () => {
   const [status, setStatus] = useState('');
   const [attendanceHistory, setAttendanceHistory] = useState([]);
   const [currentRecordId, setCurrentRecordId] = useState(null);
-
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationError, setLocationError] = useState('');
   const [isLocationVerified, setIsLocationVerified] = useState(false);
@@ -23,41 +24,56 @@ const AttendanceTracker = () => {
   const [apiMessage, setApiMessage] = useState('');
 
   const hospitalLocation = {
-    lat: 30.0444, 
-    lng: 31.2357, 
-    radius: 200, 
+    lat: 30.012258932723245, // Nile University center
+    lng: 30.987065075068312,
+    radius: 2000, // 2000 meters radius
   };
+
+  // Check for doctorId
+  useEffect(() => {
+    if (!doctorId) {
+      setApiMessage('Please log in to view attendance data');
+      navigate('/login');
+    }
+  }, [doctorId, navigate]);
 
   // Update time every minute
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 60000);
-
     return () => clearInterval(timer);
   }, []);
 
-  // Load initial data
+  // Load attendance data
   useEffect(() => {
     const loadAttendanceData = async () => {
+      if (!doctorId) return;
       setIsLoading(true);
       try {
-        // Load today's status
-        const statusResponse = await fetch(`${API_BASE_URL}/today/${doctorId}`);
+        // Fetch today's status
+        const statusResponse = await fetch(`${API_BASE_URL}/today/${doctorId}/Doctor`);
         const statusData = await statusResponse.json();
         
-        if (statusData.isCheckedIn) {
+        if (statusResponse.ok && statusData.isCheckedIn) {
           setIsCheckedIn(true);
           setCheckInTime(new Date(statusData.checkInTime));
           setStatus(statusData.status);
           setCurrentRecordId(statusData.id);
+          if (statusData.locationCoordinates) {
+            setCurrentLocation({
+              lat: parseFloat(statusData.locationCoordinates.split(',')[0]),
+              lng: parseFloat(statusData.locationCoordinates.split(',')[1])
+            });
+            setIsLocationVerified(true);
+          }
         }
 
-        // Load history
-        const historyResponse = await fetch(`${API_BASE_URL}/history/${doctorId}`);
+        // Fetch history
+        const historyResponse = await fetch(`${API_BASE_URL}/history/${doctorId}/Doctor`);
         const historyData = await historyResponse.json();
         
-        // Convert to frontend format
+        // Format history for frontend
         const formattedHistory = historyData.map(record => ({
           id: record.id,
           date: record.date,
@@ -65,7 +81,7 @@ const AttendanceTracker = () => {
           checkOut: record.checkOut || '--:-- --',
           status: record.status,
           workingHours: record.workingHours,
-          location: record.location
+          location: record.locationCoordinates
         }));
         
         setAttendanceHistory(formattedHistory);
@@ -87,7 +103,7 @@ const AttendanceTracker = () => {
     setApiMessage('');
     
     if (!navigator.geolocation) {
-      setLocationError('Geolocation is not supported by your browser');
+      setLocationError('Browser does not support geolocation');
       setIsLoading(false);
       return;
     }
@@ -100,7 +116,7 @@ const AttendanceTracker = () => {
         };
         setCurrentLocation(userLocation);
         
-        // Verify if user is within hospital area
+        // Check if user is within campus radius
         const isWithinHospital = calculateDistance(
           userLocation.lat, 
           userLocation.lng, 
@@ -113,7 +129,7 @@ const AttendanceTracker = () => {
         setIsLoading(false);
         
         if (!isWithinHospital) {
-          setApiMessage('You must be within hospital premises to check in/out');
+          setApiMessage('You must be at Nile University to check in or out');
         }
       },
       (error) => {
@@ -126,7 +142,7 @@ const AttendanceTracker = () => {
     );
   };
 
-  // Function to calculate distance between two coordinates using Haversine formula
+  // Calculate distance using Haversine formula
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6371e3; // Earth's radius in meters
     const φ1 = lat1 * Math.PI / 180;
@@ -143,13 +159,19 @@ const AttendanceTracker = () => {
 
   // Handle check-in with location verification
   const handleCheckIn = async () => {
+    if (!doctorId) {
+      setApiMessage('Please log in first');
+      navigate('/login');
+      return;
+    }
+
     if (!currentLocation) {
       getCurrentLocation();
       return;
     }
 
     if (!isLocationVerified) {
-      setApiMessage('You must be within hospital premises to check in');
+      setApiMessage('You must be at Nile University to check in');
       return;
     }
 
@@ -162,42 +184,41 @@ const AttendanceTracker = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          doctorId: doctorId,
+          userId: parseInt(doctorId),
+          userType: 'Doctor',
           latitude: currentLocation.lat,
           longitude: currentLocation.lng
         })
       });
 
-      if (!response.ok) {
-        throw new Error(await response.text());
-      }
-
       const data = await response.json();
-      const checkInTime = new Date(data.checkInTime);
-      
-      setCheckInTime(checkInTime);
-      setIsCheckedIn(true);
-      setStatus(data.status);
-      setCurrentRecordId(data.id);
-      setShowMap(false);
-      setApiMessage(data.message);
-      
-      // Refresh history
-      const historyResponse = await fetch(`${API_BASE_URL}/history/${doctorId}`);
-      const historyData = await historyResponse.json();
-      const formattedHistory = historyData.map(record => ({
-        id: record.id,
-        date: record.date,
-        checkIn: record.checkIn,
-        checkOut: record.checkOut || '--:-- --',
-        status: record.status,
-        workingHours: record.workingHours,
-        location: record.location
-      }));
-      setAttendanceHistory(formattedHistory);
+      if (response.ok) {
+        setCheckInTime(new Date(data.checkInTime));
+        setIsCheckedIn(true);
+        setStatus(data.status);
+        setCurrentRecordId(data.id);
+        setShowMap(false);
+        setApiMessage(data.message);
+        
+        // Update history
+        const historyResponse = await fetch(`${API_BASE_URL}/history/${doctorId}/Doctor`);
+        const historyData = await historyResponse.json();
+        const formattedHistory = historyData.map(record => ({
+          id: record.id,
+          date: record.date,
+          checkIn: record.checkIn,
+          checkOut: record.checkOut || '--:-- --',
+          status: record.status,
+          workingHours: record.workingHours,
+          location: record.locationCoordinates
+        }));
+        setAttendanceHistory(formattedHistory);
+      } else {
+        setApiMessage(data.message || 'Check-in failed');
+      }
     } catch (error) {
       console.error("Check-in error:", error);
-      setApiMessage(error.message);
+      setApiMessage('Error connecting to server');
     } finally {
       setIsLoading(false);
     }
@@ -205,18 +226,24 @@ const AttendanceTracker = () => {
 
   // Handle check-out with location verification
   const handleCheckOut = async () => {
+    if (!doctorId) {
+      setApiMessage('Please log in first');
+      navigate('/login');
+      return;
+    }
+
     if (!currentLocation) {
       getCurrentLocation();
       return;
     }
 
     if (!isLocationVerified) {
-      setApiMessage('You must be within hospital premises to check out');
+      setApiMessage('You must be at Nile University to check out');
       return;
     }
 
     if (!currentRecordId) {
-      setApiMessage('No active check-in record found');
+      setApiMessage('No active attendance record found');
       return;
     }
 
@@ -235,38 +262,38 @@ const AttendanceTracker = () => {
         })
       });
 
-      if (!response.ok) {
-        throw new Error(await response.text());
-      }
-
       const data = await response.json();
-      const checkOutTime = new Date();
-      
-      setCheckOutTime(checkOutTime);
-      setIsCheckedIn(false);
-      setApiMessage(data.message);
-      
-      // Update local history
-      const newRecord = {
-        id: currentRecordId,
-        date: currentDate,
-        checkIn: checkInTime.toLocaleTimeString(),
-        checkOut: checkOutTime.toLocaleTimeString(),
-        status: status,
-        workingHours: data.workingHours,
-        location: `${currentLocation.lat.toFixed(6)}, ${currentLocation.lng.toFixed(6)}`
-      };
-      
-      setAttendanceHistory(prev => [newRecord, ...prev.filter(r => r.id !== currentRecordId)]);
-      setCurrentRecordId(null);
+      if (response.ok) {
+        const checkOutTime = new Date();
+        setCheckOutTime(checkOutTime);
+        setIsCheckedIn(false);
+        setApiMessage(data.message);
+        
+        // Update history locally
+        const newRecord = {
+          id: currentRecordId,
+          date: currentDate,
+          checkIn: checkInTime.toLocaleTimeString(),
+          checkOut: checkOutTime.toLocaleTimeString(),
+          status: status,
+          workingHours: data.workingHours,
+          location: `${currentLocation.lat.toFixed(6)}, ${currentLocation.lng.toFixed(6)}`
+        };
+        
+        setAttendanceHistory(prev => [newRecord, ...prev.filter(r => r.id !== currentRecordId)]);
+        setCurrentRecordId(null);
+      } else {
+        setApiMessage(data.message || 'Check-out failed');
+      }
     } catch (error) {
       console.error("Check-out error:", error);
-      setApiMessage(error.message);
+      setApiMessage('Error connecting to server');
     } finally {
       setIsLoading(false);
     }
   };
 
+  // Open Google Maps
   const openGoogleMaps = () => {
     if (currentLocation) {
       const mapsUrl = `https://www.google.com/maps?q=${currentLocation.lat},${currentLocation.lng}`;
@@ -305,8 +332,8 @@ const AttendanceTracker = () => {
                   <FaCheck />
                 </div>
                 <div className="status-info">
-                  <h3>You are checked in</h3>
-                  <p>Check-in time: <strong>{checkInTime?.toLocaleTimeString() || '--:-- --'}</strong></p>
+                  <h3>Checked In</h3>
+                  <p>Check-in Time: <strong>{checkInTime?.toLocaleTimeString() || '--:-- --'}</strong></p>
                   <div className={`status-badge ${status.toLowerCase()}`}>{status}</div>
                 </div>
               </div>
@@ -371,15 +398,15 @@ const AttendanceTracker = () => {
               ) : currentLocation ? (
                 <div className="location-info">
                   <div className="coordinates">
-                    <p><strong>Your coordinates:</strong></p>
+                    <p><strong>Your Coordinates:</strong></p>
                     <p>Latitude: {currentLocation.lat.toFixed(6)}</p>
                     <p>Longitude: {currentLocation.lng.toFixed(6)}</p>
                   </div>
                   <div className="verification-status">
                     <p className={isLocationVerified ? "success-text" : "error-text"}>
                       {isLocationVerified 
-                        ? "✓ You are within hospital vicinity" 
-                        : "✗ You are not within hospital vicinity"}
+                        ? "✓ You are within Nile University"
+                        : "✗ You are outside Nile University"}
                     </p>
                     <button className="btn-map" onClick={openGoogleMaps}>
                       <FaMapMarkerAlt /> Open in Google Maps
@@ -401,7 +428,7 @@ const AttendanceTracker = () => {
           
           {attendanceHistory.length === 0 ? (
             <div className="empty-history">
-              <p>No attendance records yet.</p>
+              <p>No attendance records available.</p>
             </div>
           ) : (
             <div className="table-container">
@@ -409,10 +436,10 @@ const AttendanceTracker = () => {
                 <thead>
                   <tr>
                     <th>Date</th>
-                    <th>Check In</th>
-                    <th>Check Out</th>
+                    <th>Check-In</th>
+                    <th>Check-Out</th>
                     <th>Status</th>
-                    <th>Hours</th>
+                    <th>Working Hours</th>
                     <th>Location</th>
                   </tr>
                 </thead>
@@ -427,7 +454,7 @@ const AttendanceTracker = () => {
                           {record.status}
                         </div>
                       </td>
-                      <td>{record.workingHours} hrs</td>
+                      <td>{record.workingHours} hours</td>
                       <td>
                         <button 
                           className="btn-location" 
@@ -443,7 +470,7 @@ const AttendanceTracker = () => {
               
               {attendanceHistory.length > 5 && (
                 <div className="view-more">
-                  <p>Showing 5 most recent records out of {attendanceHistory.length}</p>
+                  <p>Showing latest 5 of {attendanceHistory.length} records</p>
                 </div>
               )}
             </div>

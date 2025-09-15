@@ -60,16 +60,17 @@ export const AllDoctors = () => {
                                             style={{
                                                 color: item.isActive
                                                     ? 'rgba(0, 128, 0, 0.852)'
-                                                    : 'rgba(255, 0, 0, 0.852)',
+                                                    : 'rgba(0, 128, 0, 0.852)',
+                                                    
                                                 fontSize: '12px',
                                             }}
                                             className='avalible'
                                         >
-                                            {item.isActive ? 'Available' : 'Not Available'}
+                                            {item.isActive ? 'Available' : ' Available'}
                                       {console.log(item)}
                                         </p>
                                     </div>
-                                    <p style={{ textTransform: 'capitalize' }}>Dr.{item.name}</p>
+                                    <p style={{ textTransform: 'capitalize' }}>{item.name}</p>
                                 </div>
                             </div>
                         ))
